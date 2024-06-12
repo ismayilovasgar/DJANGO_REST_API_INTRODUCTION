@@ -1,5 +1,6 @@
 from django.urls import path
 from .views import ItemDetail, ItemList
+from .views import *
 
 
 urlpatterns = [
@@ -16,4 +17,5 @@ urlpatterns = [
     #
     path("list/", ItemList.as_view()),
     path("detail/<int:pk>", ItemDetail.as_view()),
+    path("add-movie", add_movie, name="add-movie"),
 ]

@@ -1,0 +1,101 @@
+{% extends "_base.html" %}
+{% load static %}
+{% block custom__css %}
+
+<link rel="stylesheet" href="{% static 'bootstrap.css' %}">
+<link rel="stylesheet" href="{% static '_base.css' %}">
+{% endblock custom__css %}
+
+
+{% block content %}
+{% comment %} 
+<div class="container-lg mb-5">
+    <div class="row">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <h3>Insert Data Form</h3>
+                    <p>Fill in the data below.</p>
+                    <form class="requires-validation" method="POST" >
+                    {% csrf_token %}
+                        <div class="col-md-12">
+                           <input class="form-control" type="text" name="movie_name" placeholder="full movie name" required>
+                           <div class="valid-feedback">Username field is valid!</div>
+                           <div class="invalid-feedback">Username field cannot be blank!</div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <input class="form-control" type="text" name="image_url" placeholder="enter image logo url" required>
+                             <div class="valid-feedback">Email field is valid!</div>
+                             <div class="invalid-feedback">Email field cannot be blank!</div>
+                        </div>
+
+                    
+                       <div class="col-md-12 my-3">
+                          <input class="form-control" type="text" name="director" placeholder="enter name of director" required>
+                           <div class="valid-feedback">Password field is valid!</div>
+                           <div class="invalid-feedback">Password field cannot be blank!</div>
+                       </div>
+
+                       <div class="col-md-12 my-3">
+                        <textarea class="form-control" type="textarea" name="content" placeholder="enter movie content" required></textarea>
+                         <div class="valid-feedback">Password field is valid!</div>
+                         <div class="invalid-feedback">Password field cannot be blank!</div>
+                      </div>
+
+                      <div class="col-md-12">
+                        <input class="form-control" type="text" name="release_year" placeholder="insert first release year" required>
+                         <div class="valid-feedback">Password field is valid!</div>
+                         <div class="invalid-feedback">Password field cannot be blank!</div>
+                      </div>
+
+                        <div class="form-button mt-5">
+                            <button id="submit" type="submit" class="btn btn-primary">Insert Data</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> {% endcomment %}
+<div class="container-fluid px-1 py-5 mx-auto">
+    <div class="row d-flex justify-content-center">
+        <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+            <div class="card">
+                <h5 class="text-center mb-4">Movie Information Save Form Page</h5>
+                <form class="form-card" method="POST">
+                    {% csrf_token %}
+                    <div class="row justify-content-between text-left mb-2">
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Movie Name<span class="text-danger"> *</span></label> <input type="text" id="movie_name_id" name="movie_name" placeholder="Enter your movie name" > </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Director Name<span class="text-danger"> *</span></label> <input type="text" id="director_id" name="director" placeholder="Enter your director name"> </div>
+                    </div>
+                    <div class="row justify-content-between text-left my-3">
+                        <div class="form-group col-sm-12 flex-column d-flex"> <label class="form-control-label px-3">Movie Image Url<span class="text-danger"> *</span></label> <input type="text" id="image_url" name="image_url" placeholder="enter image url: https:/.."> </div>
+                    </div>
+                    
+                    <div class="row justify-content-between text-left mb-3">
+                        <div class="form-group col-sm-12 flex-column d-flex"> <label class="form-control-label px-3">First Release Year<span class="text-danger"> *</span></label> <input type="text" id="release_year_id" name="release_year" placeholder="enter release year"> </div>
+                    </div>
+
+
+                    <div class="row justify-content-between text-left mb-3">
+                        <div class="form-group col-12 flex-column d-flex">
+                             <label class="form-control-label px-3">Enter Content About movie
+                                <span class="text-danger">*</span></label> 
+                                <textarea type="text" id="content_movie" name="content" placeholder="enter content section" > 
+                                </textarea>
+                            </div>
+                    </div>
+                    <div class="row justify-content-end">
+                        <div class="form-group "> 
+                            <button type="Submit" class="btn-block btn-primary">Save Movie</button> 
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}

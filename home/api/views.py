@@ -1,6 +1,7 @@
-# from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
+from ..forms import *
+
 # from ..models import Blog
-# from ..forms import *
 # from .serializes import *
 # from rest_framework.generics import (
 #     ListAPIView,
@@ -12,7 +13,7 @@
 # from rest_framework import status
 # from rest_framework.response import Response
 # import requests
-# from django.shortcuts import render
+from django.shortcuts import render
 
 from rest_framework import generics
 from .serializes import *
@@ -73,6 +74,7 @@ from .serializes import *
 #     queryset = Employeemodel.objects.all()
 #     serializer_class = EmployeeSerializer
 
+
 # * Movie API
 class ItemList(generics.ListCreateAPIView):
     serializer_class = MovieSerializer
@@ -85,3 +87,18 @@ class ItemList(generics.ListCreateAPIView):
 class ItemDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = MovieSerializer
     queryset = MovieModel.objects.all()
+
+
+def add_movie(request):
+    context = dict()
+    url = request.META.get("HTTP_REFERER")
+    if request.method == "POST":
+        form = MovieForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(url)
+
+    else:
+        context["form"] = MovieForm()
+
+    return render(request, "add_movie.html", context)
