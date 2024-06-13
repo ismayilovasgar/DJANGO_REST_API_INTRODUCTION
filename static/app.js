@@ -15,5 +15,3 @@ function creat_movie_cards(movie) {
 `;
   card__container.innerHTML += card;
 }
-
-console.log("hello world");
