@@ -17,9 +17,14 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
+from home.views import *
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    # path("blog-api/", include("home.api.urls")),
-    path("movie-api/", include("home.api.urls")),
+    path("blog-api/", include("home.api.urls")),
+    #  Movie
+    path("movie-api/", ItemDetail.as_view()),
+    path("movie-api/list/", ItemList.as_view()),
+    path("movie-api/detail/<int:pk>", ItemDetail.as_view()),
+    path("movie-api/cards/", show__movies, name="showMovies"),
 ]

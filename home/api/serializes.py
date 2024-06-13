@@ -7,14 +7,14 @@ from home.models import *
 #     content = serializers.CharField(max_length=80)
 
 
-# class BlogSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Blog
-#         # fields = "__all__"
-#         fields = ["id", "title", "content", "created_date", "draft"]
+class BlogSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Blog
+        # fields = "__all__"
+        fields = ["id", "title", "content", "created_date", "draft"]
 
 
 class MovieSerializer(serializers.ModelSerializer):
     class Meta:
         model = MovieModel
-        fields = ("__all__")
+        fields = "__all__"
