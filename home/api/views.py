@@ -38,7 +38,7 @@ class BlogListAPIView(ListAPIView):
 
 class BlogDetailAPIView(RetrieveAPIView):
     queryset = Blog.objects.all()
-    serializer_class = BlogSerializer
+    serializer_class = BlogDetailSerializer
     lookup_field = "pk"
 
 
