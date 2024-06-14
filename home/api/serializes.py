@@ -11,7 +11,7 @@ class BlogSerializer(serializers.ModelSerializer):
     class Meta:
         model = Blog
         # fields = "__all__"
-        fields = ["id", "title", "content", "created_date", "draft"]
+        fields = ["id", "title", "content", "created_date", "image", "draft"]
 
 
 class MovieSerializer(serializers.ModelSerializer):

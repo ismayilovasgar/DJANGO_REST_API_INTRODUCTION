@@ -19,6 +19,10 @@ from django.contrib import admin
 from django.urls import path, include
 from home.views import *
 
+# For ImageField
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("blog-api/", include("home.api.urls")),
@@ -28,3 +32,7 @@ urlpatterns = [
     path("movie-api/detail/<int:pk>", ItemDetail.as_view()),
     path("movie-api/cards/", show__movies, name="showMovies"),
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# * For ImageField
