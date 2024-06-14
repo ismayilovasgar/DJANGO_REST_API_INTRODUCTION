@@ -19,6 +19,7 @@ from .serializes import *
 
 # DRF 2
 from rest_framework.filters import SearchFilter, OrderingFilter
+from .paginations import *
 
 
 class BlogListAPIView(ListAPIView):
@@ -27,6 +28,9 @@ class BlogListAPIView(ListAPIView):
 
     filter_backends = [SearchFilter, OrderingFilter]
     search_fields = ["title", "content"]
+    ordering_fields = ["id"]
+
+    # pagination_class = BlogPagination
 
     # def get_queryset(self):
     #     return Blog.objects.filter(draft=True)
