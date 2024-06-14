@@ -16,6 +16,7 @@ class Blog(models.Model):
 
 
 class MovieModel(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     movie_name = models.CharField(max_length=50)
     image_url = models.CharField(max_length=300)
     director = models.CharField(max_length=100)
