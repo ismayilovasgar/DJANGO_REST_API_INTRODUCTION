@@ -17,7 +17,7 @@ from rest_framework import generics
 from .serializes import *
 
 
-class BlogListAPIView(ListAPIView):
+class BlogListAPIView(generics.ListCreateAPIView):
     queryset = Blog.objects.all()
     serializer_class = BlogSerializer
 

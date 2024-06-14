@@ -8,6 +8,7 @@ from home.models import *
 
 
 class BlogSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = Blog
         # fields = "__all__"
