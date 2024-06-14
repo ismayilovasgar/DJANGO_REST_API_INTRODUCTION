@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # My App:
     "home",
+    # REST Framework
     "rest_framework",
+    "django_filters",
     # My Install Package
     "django_cleanup",
 ]
