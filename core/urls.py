@@ -24,6 +24,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+    path("", home__page, name="home"),
     path("admin/", admin.site.urls),
     path("blog-api/", include("home.api.urls")),
     #  Movie

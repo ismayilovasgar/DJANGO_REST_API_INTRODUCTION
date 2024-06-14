@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+body {
+  background: #2980b9; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2c3e50, #2980b9);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2c3e50, #2980b9);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.container {
+  width: 1200px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+.card__container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 10vh auto;
+  padding: 10vh 5vh;
+}
+
+.card__container .card {
+  width: 28%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border: 1px solid rgba(167, 192, 167, 0.616);
+  gap: 20px;
+  padding: 0 0 10px 0;
+  box-shadow: 2px 2px rgb(2, 29, 2);
+  cursor: pointer;
+}
+.card__container .card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card__container .card h3 {
+  font-size: 24px;
+  padding: 2px 8px;
+}
+
+.card__container .card .movie_content {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: justify;
+  padding: 2px 8px;
+  text-indent: 12px;
+}
+.card__container .card .movie_detail {
+  padding: 2px 0 0 10px;
+  font-size: 18px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: white;
+}
+
+.darker {
+  --shadow-color: hsl(135, 6%, 76%);
+}
+.box {
+  filter: drop-shadow(1px 2px 8px var(--shadow-color));
+}

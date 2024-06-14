@@ -22,3 +22,8 @@ class ItemDetail(generics.RetrieveUpdateDestroyAPIView):
 
 def show__movies(request):
     return render(request, "view.html")
+
+
+def home__page(request):
+
+    return render(request, "index.html")
